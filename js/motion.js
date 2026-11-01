@@ -51,14 +51,23 @@
     }
 
     event.preventDefault();
+
+    function leave() {
+      try { sessionStorage.setItem('an-wipe', '1'); } catch (e) {}
+      window.location.href = link.href;
+    }
+
+    // Animation pauses in a background tab and crawls on a struggling device; the link must still open.
+    var fallback = setTimeout(leave, 800);
+
     gsap.set(wipe, { transformOrigin: '50% 100%' });
     gsap.fromTo(wipe, { scaleY: 0 }, {
       scaleY: 1,
       duration: 0.42,
       ease: 'power3.inOut',
       onComplete: function () {
-        try { sessionStorage.setItem('an-wipe', '1'); } catch (e) {}
-        window.location.href = link.href;
+        clearTimeout(fallback);
+        leave();
       }
     });
   });
