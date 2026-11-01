@@ -1,0 +1,12 @@
+{
+  "name": "an-biotech-website",
+  "version": "2.0.0",
+  "description": "A N Biotech website",
+  "private": true,
+  "scripts": {
+    "build": "node build.js",
+    "start": "node server.js"
+  },
+  "author": "A N Biotech",
+  "license": "UNLICENSED"
+}
