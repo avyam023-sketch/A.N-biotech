@@ -23,4 +23,8 @@ To preview at http://localhost:3000:
 npm start
 ```
 
-To publish, upload `index.html`, `products.html`, `enquiry.html` and the `products`, `assets`, `css` and `js` folders to any static host.
+The live site is at https://avyam023-sketch.github.io/A.N-biotech/ and is served from the `gh-pages` branch. To publish, commit your changes and push to both branches:
+
+```bash
+git push origin main main:gh-pages
+```
